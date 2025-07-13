@@ -9,6 +9,33 @@ class FirstPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
     appBar: AppBar(title: Text("1st page"), backgroundColor: Colors.amber,),
+    //the bottom navigation bar
+bottomNavigationBar: BottomNavigationBar(items: [
+
+//item 1
+BottomNavigationBarItem(
+  icon:Icon(Icons.home),
+  label:'Home' ,
+  
+),
+//item2
+BottomNavigationBarItem(
+  icon:Icon(Icons.person),
+  label:'Profile' ,
+  
+ ),
+//item3
+BottomNavigationBarItem(
+  icon:Icon(Icons.settings),
+  label:'Settings' ,
+  
+),
+] 
+
+
+),
+
+    //drawer
     drawer: Drawer(
       backgroundColor: const Color.fromARGB(255, 242, 234, 255),
       child: Column(
@@ -20,6 +47,7 @@ class FirstPage extends StatelessWidget {
             leading: Icon(Icons.home),
             title: Text("H O M E"),
             onTap: () {
+              Navigator.pop(context);
               Navigator.pushNamed(context, '/Homepage');
             } ,
           ),
@@ -28,6 +56,7 @@ class FirstPage extends StatelessWidget {
             leading: Icon(Icons.settings),
             title: Text("S E T T I N G S"),
              onTap: () {
+               Navigator.pop(context);
               Navigator.pushNamed(context, '/Settingspage');
             } ,
           )
